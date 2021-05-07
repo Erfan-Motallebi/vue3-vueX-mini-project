@@ -8,7 +8,6 @@ const moduleA = {
     count: 0,
     people: [],
   }),
-
   mutations: {
     countUp(state, eventCount) {
       state.count = state.count + eventCount;
@@ -50,6 +49,7 @@ const moduleA = {
 };
 
 const moduleB = {
+  namespaced: true,
   state: () => ({
     products: [
       { id: 1, name: "Shoes", price: 20 },

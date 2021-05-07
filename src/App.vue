@@ -5,7 +5,7 @@
   <button v-on:click="increment()">ADD</button> <br />
   <button v-on:click="decrement()">Subtract</button> <br />
   <button v-on:click="showAPI()">People</button>
-  <button @click="$store.dispatch('showId')">soldProducts ID</button>
+  <button @click="$store.dispatch('eventB/showId')">soldProducts ID</button>
 
   <div v-if="$store.getters.countPeople(10)">
     <p v-for="(person, index) in $store.state.eventA.people" :key="index">
@@ -18,7 +18,10 @@
     </p>
   </div>
   <div>
-    <p v-for="(half, index) in $store.getters.saleProducts" :key="index">
+    <p
+      v-for="(half, index) in $store.getters['eventB/saleProducts']"
+      :key="index"
+    >
       {{ half }}
     </p>
   </div>
